@@ -1,0 +1,202 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/bootstrap.min.css">
+    <!-- MDB CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/mdb.min.css">
+    <!-- custom Stylesheet -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/style.css">
+    <title>SmartRescueSystem | Welcome</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+            <div class="container">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Smart Rescue System</a>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav"
+                        aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="topnav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#intro">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggler" id="navbardropdownLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+
+                            <div class="dropdown-menu dropdown-Dark" aria-labelledby="navbardropdownLink">
+                                <a class="dropdown-item" href="/Rescue/FileReport">File Report</a>
+                                <a class="dropdown-item" href="/Rescue/ViewReport">View Report</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+                </div>
+            </div>
+
+        </nav>
+        <div id="intro" class="view">
+            <div class="mask rgba-black-strong">
+                <div class="container-fluid h-100 d-flex align-items-center justify-content-center ">
+                    <div class="d-flex justify-content-center">
+                        <div class="row d-flex justify-content-between">
+
+                            <div class="col-lg-9 mb-1">
+                                <div class="row">
+                                    <div class="col-lg-4 text-center mb-2">
+                                        <i class="fas fa-clock fa-4x orange-text"></i>
+                                        <h5 class="white-text">
+                                            Request received
+                                        </h5>
+                                    </div>
+                                    <div class="col-lg-8 d-flex align-items-center justify-content-around">
+                                        <i class="fab fa-gripfire fa-2x orange-text"></i>
+                                        <span class="white-text">10</span>
+                                        <i class="fas fa-star-of-life fa-2x orange-text"></i>
+                                        <span class="white-text">20</span>
+                                        <i class="fas fa-swimmer fa-2x orange-text"></i>
+                                        <span class="white-text">30</span>
+                                        <i class="fas fa-balance-scale fa-2x orange-text"></i>
+                                        <span class="white-text">40</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 mb-1">
+                                <div class="row">
+                                    <div class="col-md-6 text-center mb-2">
+                                        <i class="fas fa-check fa-4x orange-text"></i>
+                                        <h5 class="text-white">Request Completed</h5>
+                                    </div>
+                                    <div class="col-lg-6 text-center">
+                                        <h6 class="display-4 text-white">100</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container-fluid mt-4" id="about">
+                <h5 class="display-4 text-center">About</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="view">
+                                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/09/09/21/37/lifesaver-933560_1280.jpg" alt="about image">
+                                    <div class="mask waves-effect waves-light rgba-red-light">
+                                        <a class="white-text" href="#!"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-5">
+            </div>
+            <div class="container-fluid mb-4" id="contact">
+                <h5 class="display-4 text-center">Contact</h5>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="container-fluid">
+                                <form class="w-100">
+                                    <div class="md-form">
+                                        <i class="fas fa-envelope prefix"></i>
+                                        <input type="text" id="email" class="form-control">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fas fa-tag prefix"></i>
+                                        <input type="text" id="subject" class="form-control">
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fas fa-pen prefix"></i>
+                                        <textarea type="text" id="message" class="form-control md-textarea"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                    <button class="btn btn-primary z-depth-1-half"> sent<i class="fas fa-paper-plane ml-1"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id="contactinfo">
+                            <div class="container text-center">
+                                <h2 class="white-text mt-3">Contact Information</h2>
+                                <div class="row mt-2 d-flex align-items-center justify-content-center">
+                                    <p class="white-text"><i class="fas fa-map-marker-alt pr-2 blue-grey-text"></i>Peshawar Road, abc plaza 1st floor, Rawalpindi, Pakistan</p>
+                                </div>
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <p class="white-text"><i class="fas fa-phone pr-2 blue-grey-text"></i>+92 311 5336131</p>
+                                </div>
+                                <div class="row d-flex align-items-center justify-content-center">
+                                    <p class="white-text"><i class="fas fa-envelope pr-2 blue-grey-text"></i>contact@example.com</p>
+                                </div>
+                                <hr class="hr-light">
+                                <div class="row d-flex align-items-center justify-content-center mb-2">
+                                    <i class="fab fa-facebook-square fa-2x pr-2 blue-grey-text"></i>
+                                    <i class="fab fa-twitter fa-2x pr-2 blue-grey-text"></i>
+                                    <i class="fab fa-instagram fa-2x pr-2 blue-grey-text"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="page-footer blue">
+        <div class="footer-copyright text-center py-3">
+            Made with <span>&hearts;</span>
+            <a href="#"> Eziline</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/mdb.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using SmartRescueSystem.Models;
+@model SmartRescueSystem.Models.Admin
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/bootstrap.min.css">
+    <!-- MDB CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/mdb.min.css">
+    <!-- custom Stylesheet -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/style.css">
+    <title>SmartRescueSystem | Welcome</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar" style="background-color:#24355C">
+
+        <div class="container">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Smart Rescue System</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav"
+                    aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="topnav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Rescue/Index">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggler" id="navbardropdownLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+
+                        <div class="dropdown-menu dropdown-Dark" aria-labelledby="navbardropdownLink">
+                            <a class="dropdown-item" href="/Rescue/FileReport">File Report</a>
+                            <a class="dropdown-item" href="/Rescue/ViewReport">View Report</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- Links -->
+            </div>
+        </div>
+
+    </nav>
+    <main>
+        <div class="container">
+            <h2 class="text-center display-4 mt-2">Admin Register</h2>
+            <div class="card mt-5  mb-5">
+                <div class="card-body">
+                    @using (Html.BeginForm("Register", "Admin", FormMethod.Post, new { @class = "mt-5 mb-5" }))
+                    {
+                        <div class="md-form mt-2">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.LabelFor(m => m.Name)
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "red-text" })
+                        </div>
+                        <div class="md-form mt-2">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email" })
+                            @Html.LabelFor(m => m.Email)
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "red-text" })
+                        </div>
+                        <div class="md-form mt-2">
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password" })
+                            @Html.LabelFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "red-text" })
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    }
+                    @ViewBag.Message
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer blue fixed-bottom">
+        <div class="footer-copyright text-center py-3">
+            Made with <span>&hearts;</span>
+            <a href="#"> Eziline</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/mdb.min.js"></script>
+    <!-- validation script -->
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

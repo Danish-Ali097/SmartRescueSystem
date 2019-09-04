@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using SmartRescueSystem.Models;
+@model SmartRescueSystem.Models.Emergency
+
+@{
+    List<Catagory> list = (List<Catagory>)ViewData["catlist"];
+ }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/bootstrap.min.css">
+    <!-- MDB CSS -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/mdb.min.css">
+    <!-- custom Stylesheet -->
+    <link rel="stylesheet" href="~/MDB-Free_4.8.8/css/style.css">
+    <title>SmartRescueSystem | Welcome</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar" style="background-color:#24355C">
+
+        <div class="container">
+
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">Smart Rescue System</a>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav"
+                    aria-controls="topnav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="topnav">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Rescue/Index">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggler" id="navbardropdownLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+
+                        <div class="dropdown-menu dropdown-Dark" aria-labelledby="navbardropdownLink">
+                            <a class="dropdown-item" href="#">File Report</a>
+                            <a class="dropdown-item" href="/Rescue/ViewReport">View Report</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- Links -->
+            </div>
+        </div>
+
+    </nav>
+    <main>
+        <div class="container">
+            <h2 class="text-center display-4 mt-2">Report Emergency</h2>
+
+            @if (ViewData["Title"] != null)
+            {
+                <div class="alert alert-info">
+                    <p> <strong>@ViewData["Title"]</strong> @ViewData["Message"] </p>
+                </div>
+            }
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "mt-5 mb-4" }))
+            {
+                <div class="md-form">
+                    @Html.TextBoxFor(m => m.reporter_name, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.reporter_name)
+                    @Html.ValidationMessageFor(m => m.reporter_name, "", new { @class = "red-text" })
+                </div>
+                <div class="md-form">
+                    @Html.TextBoxFor(m => m.reporter_phnumber, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.reporter_phnumber)
+                    @Html.ValidationMessageFor(m => m.reporter_phnumber, "", new { @class = "red-text" })
+                </div>
+                <div class="md-form">
+                    @Html.TextBoxFor(m => m.emergency_title, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.emergency_title)
+                    @Html.ValidationMessageFor(m => m.emergency_title, "", new { @class = "red-text" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.catagory_id)
+                    @Html.DropDownListFor(m => m.catagory_id, new SelectList(list, "Id", "Catagory_title"), "----Select a catagory----", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.catagory_id, "", new { @class = "red-text" })
+                </div>
+                <div class="md-form">
+                    @Html.TextBoxFor(m => m.emergency_location, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.emergency_location)
+                    @Html.ValidationMessageFor(m => m.emergency_location, "", new { @class = "red-text" })
+                </div>
+                <div class="md-form">
+                    @Html.TextAreaFor(m => m.emergency_detail, new { @class = "form-control md-textarea" })
+                    @Html.LabelFor(m => m.emergency_detail)
+                    @Html.ValidationMessageFor(m => m.emergency_detail, "", new { @class = "red-text" })
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            }
+        </div>
+    </main>
+    <footer class="page-footer blue">
+        <div class="footer-copyright text-center py-3">
+            Made with <span>&hearts;</span>
+            <a href="#"> Eziline</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/MDB-Free_4.8.8/js/mdb.min.js"></script>
+    <!-- validation script -->
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
