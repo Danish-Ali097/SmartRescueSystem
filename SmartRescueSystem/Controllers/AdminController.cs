@@ -112,5 +112,32 @@ namespace SmartRescueSystem.Controllers
             return RedirectToAction("Login");
         }
 
+        // AcceptProvider
+        public ActionResult AcceptProvider(int id)
+        {
+            if (Session["AdminLgnFlag"] != null)
+            {
+                var temp = db.ServiceProviders.Find(id);
+                temp.Sgn_Status = "accepted";
+                db.Entry(temp).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Login");
+        }
+
+        // RejectProvider
+        public ActionResult RejectProvider(int id)
+        {
+            if (Session["AdminLgnFlag"] != null)
+            {
+                var temp = db.ServiceProviders.Find(id);
+                temp.Sgn_Status = "rejected";
+                db.Entry(temp).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Login");
+        }
     }
 }

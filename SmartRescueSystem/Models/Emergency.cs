@@ -30,6 +30,7 @@ namespace SmartRescueSystem.Models
         public string emergency_detail { get; set; }
         public string status { get; set; }
         public Nullable<int> sp_id { get; set; }
+        [Display(Name ="Remarks")]
         public string sp_remarks { get; set; }
         public string feedback { get; set; }
     }

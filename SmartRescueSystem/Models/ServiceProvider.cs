@@ -26,6 +26,7 @@ namespace SmartRescueSystem.Models
         public string Fax { get; set; }
         [Required]
         public string Address { get; set; }
+        [Display(Name ="Status")]
         public string Sgn_Status { get; set; }
         [Required]
         public string Password { get; set; }
